@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_transform">
+
+    <fragment
+        android:id="@+id/nav_transform"
+        android:name="com.example.gamescrud.ui.transform.TransformFragment"
+        android:label="@string/menu_transform"
+        tools:layout="@layout/fragment_transform">
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_reflow"
+            app:destination="@id/nav_reflow"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_reflow"
+        android:name="com.example.gamescrud.ui.reflow.ReflowFragment"
+        android:label="@string/menu_reflow"
+        tools:layout="@layout/fragment_reflow" />
+    <action
+        android:id="@+id/action_nav_reflow_to_transform"
+        app:destination="@id/nav_transform"
+        app:launchSingleTop="false"
+        app:popUpTo="@id/mobile_navigation"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.gamescrud.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.gamescrud.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
